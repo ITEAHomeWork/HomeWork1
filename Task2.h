@@ -15,7 +15,7 @@ namespace Task2
 	}
 	void ParseDate()
 	{
-		std::regex regexpr("[0-9]+");		
+		std::regex regexpr("[0-9][0-9]");		
 		std::regex validateDateExpr("(0[1-9]|[12][0-9]|3[01]{1,2}).(0[1-9]|[12]{1,2}).(19[0-9][0-9]|20[0-9][0-9])");
 		if (std::regex_match(date, validateDateExpr))
 		{
@@ -29,6 +29,7 @@ namespace Task2
 				if (counter == 1)
 				{
 					monthNumber = atoi(match_str.c_str());
+					break;
 				}
 			}
 			switch (monthNumber)

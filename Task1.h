@@ -21,12 +21,7 @@ namespace Task1
 
     void GenerateThrows(int numberOfThrows)
     {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<> distr(1, 6);
-
         for (size_t i = 0; i < numberOfThrows; i++)
-            //++sidesCounter[distr(gen)];
             ++sidesCounter[1 + rand() % 6];
     }
 

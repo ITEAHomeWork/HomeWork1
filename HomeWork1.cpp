@@ -7,13 +7,13 @@
 
 int main()
 {
-    /*int numberOfThrows;
+    int numberOfThrows;
     std::cout << "Enter number of throw: ";
     std::cin >> numberOfThrows;
     Task1::GenerateThrows(numberOfThrows);
     Task1::PrintStatistic();
     Task1::FindMaxSide();
-    Task1::FindMinSide(numberOfThrows);*/
+    Task1::FindMinSide(numberOfThrows);
     Task2::InputDate();
     Task2::ParseDate();
 }
