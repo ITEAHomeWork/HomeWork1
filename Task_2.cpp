@@ -1,14 +1,6 @@
 #include <iostream>
 
 /*
-	UKRAININAN VERSION COMMENT.
-	===================================================================
-	Ќаписати програму, €ка дозвол€Ї за введеним з консол≥ числом
-	визначити назву м≥с€ц€ та к≥льк≥сть дн≥в у цьому м≥с€ц≥.
-	===================================================================
-
-	-------------------------------------------------------------------
-
 	ENGLISH VERSION COMMENT.
 	===================================================================
 	Write a program that allow you to enter the number entered from
@@ -19,7 +11,7 @@
 
 int main()
 {
-	unsigned short numberOfMonth;
+	unsigned short numberOfMonth{};
 
 	std::cout << "Enter number of month (1 to 12): ";
 	std::cin >> numberOfMonth;
