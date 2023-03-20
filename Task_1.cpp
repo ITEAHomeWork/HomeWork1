@@ -2,17 +2,6 @@
 #include <string>
 
 /*
-	
-	UKRAINIAN VERSION COMMENT.
-	================================================================================
-	Використовуючи генератор випадкових чисел, написати програму, яка здійснює кидок
-	гральної кістки (1 - 6). Зробити кількість кидків, яка була введена в консоль та
-	підрахувати кількість випадань кожної сторони. Вивести результат у консоль.
-	Вивести сторони, які випали більше та менше.
-	================================================================================
-
-	--------------------------------------------------------------------------------
-
 	ENGLISH VERSION COMMENT.
 	==================================================================================
 	Using a random number generator, write a program that throws a toss glans (1 - 6).
@@ -26,7 +15,7 @@ int main()
 {
 	srand(time(nullptr));
 
-	unsigned int countOfThrow;
+	unsigned int countOfThrow{};
 
 	unsigned int count[6] = { 0, 0, 0, 0, 0, 0 };
 	unsigned int number[6] = { 1, 2, 3, 4, 5, 6 };
@@ -69,12 +58,10 @@ int main()
 	std::cout << "Count of throw of each sides:\n";
 	std::cout << std::endl;
 
-	std::cout << "Count of 1: " << count[0] << std::endl;
-	std::cout << "Count of 2: " << count[1] << std::endl;
-	std::cout << "Count of 3: " << count[2] << std::endl;
-	std::cout << "Count of 4: " << count[3] << std::endl;
-	std::cout << "Count of 5: " << count[4] << std::endl;
-	std::cout << "Count of 6: " << count[5] << std::endl;
+	/* a variable which outputed the sides from 1 to 6 */
+	int indexCount = 1;
+	for (int index{}; index < 6; index++)
+		std::cout << "Count of " << indexCount++ << ": " << count[index] << std::endl;
 
 	for (int index = 1; index < 6; index++)
 		if (count[index] > max_count)
