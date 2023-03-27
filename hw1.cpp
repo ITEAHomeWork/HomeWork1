@@ -44,7 +44,7 @@ int main()
         }
     };
 
-    for (int j = 0; j < (sizeof(initialArray)/sizeof(int)) ; j++) {
+    for (int j = 0; j < (sizeof(initialArray) / sizeof(int)); j++) {
 
         if (initialArray[j] > maxValue) {
             maxValue = initialArray[j];
@@ -54,17 +54,64 @@ int main()
 
     };
 
-    std::cout << "Number of " << boneResult << " was thrown "<< maxValue<< " times" << std::endl;
-
-  /*
- 
-    for (const auto e : initialArray) {
-    std::cout << e << std::endl;
-    }  
-    Array checker 
-  
-  */
+    std::cout << "Number of " << boneResult << " was thrown " << maxValue << " times" << std::endl;
 
 
 
+    /*
+
+      for (const auto e : initialArray) {
+      std::cout << e << std::endl;
+      }
+      Array checker
+
+    */
+
+    unsigned short monthNumber;
+    std::cout << "Enter the number of month(1-12):" << std::endl;
+
+    std::cin >> monthNumber;
+
+    switch (monthNumber)
+    {
+    case 1:
+        std::cout << "January, days: 31";
+        break;
+    case 2:
+        std::cout << "February, days: 28";
+        break;
+    case 3:
+        std::cout << "March, days: 31";
+        break;
+    case 4:
+        std::cout << "April, days: 30";
+        break;
+    case 5:
+        std::cout << "May, days : 31";
+        break;
+    case 6:
+        std::cout << "June, days: 30";
+        break;
+    case 7:
+        std::cout << "July, days: 31";
+        break;
+    case 8:
+        std::cout << "August, days: 31";
+        break;
+    case 9:
+        std::cout << "September, days: 30";
+        break;
+    case 10:
+        std::cout << "October, days: 31";
+        break;
+    case 11:
+        std::cout << "November, days: 30";
+        break;
+    case 12:
+        std::cout << "December, days: 31";
+        break;
+    default:
+        std::cout << "Error, type another number of month";
+        break;
+    }
 }
