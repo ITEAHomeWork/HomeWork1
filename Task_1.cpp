@@ -13,45 +13,25 @@
 
 int main()
 {
-	srand(time(nullptr));
+	int countOfThrow{};
+	const int size = 6;
 
-	unsigned int countOfThrow{};
+	int count[size]{ 0, 0, 0, 0, 0, 0 };
+	int number[size]{ 1, 2, 3, 4, 5, 6 };
 
-	unsigned int count[6] = { 0, 0, 0, 0, 0, 0 };
-	unsigned int number[6] = { 1, 2, 3, 4, 5, 6 };
+	int max_count = count[0];
+	int min_count = count[0];
 
-	unsigned int max_count = count[0];
-	unsigned int min_count = count[0];
-
-	std::string indexNumbers[] = { "First", "Second", "Third", "Fourth", "Fifth", "Sixth" };
+	std::string indexNumber[]{ "First", "Second", "Third", "Fourth", "Fifth", "Sixth" };
 
 	std::cout << "Input count of throw (1 to 6): ";
 	std::cin >> countOfThrow;
-	std::cout << std::endl;
 
-	for (int newThrow = 0; newThrow < countOfThrow; newThrow++)
+	for (int newThrow{ 0 }; newThrow < countOfThrow; newThrow++)
 	{
-		number[newThrow] = rand() % 6 + 1;
+		number[newThrow] = rand() % size + 1;
 
-		std::cout << indexNumbers[newThrow] << " throw is: " << number[newThrow] << std::endl;
-
-		if (number[newThrow] == 1)
-			count[0]++;
-
-		if (number[newThrow] == 2)
-			count[1]++;
-
-		if (number[newThrow] == 3)
-			count[2]++;
-
-		if (number[newThrow] == 4)
-			count[3]++;
-
-		if (number[newThrow] == 5)
-			count[4]++;
-
-		if (number[newThrow] == 6)
-			count[5]++;
+		count[rand() % 6]++;
 	}
 
 	std::cout << std::endl;
@@ -59,21 +39,21 @@ int main()
 	std::cout << std::endl;
 
 	/* a variable which outputed the sides from 1 to 6 */
-	int indexCount = 1;
-	for (int index{}; index < 6; index++)
+	int indexCount{ 1 };
+	for (int index{ 0 }; index < size; index++)
 		std::cout << "Count of " << indexCount++ << ": " << count[index] << std::endl;
 
-	for (int index = 1; index < 6; index++)
+	for (int index{ 0 }; index < size; index++)
 		if (count[index] > max_count)
 			max_count = count[index];
 
-	for (int index = 1; index < 6; index++)
+	for (int index{ 0 }; index < size; index++)
 		if (count[index] < min_count)
 			min_count = count[index];
 
 	std::cout << std::endl;
-	std::cout << "Maximum number is: " << max_count << "\n";
-	std::cout << "Minimum number is: " << min_count << "\n";
+	std::cout << "Maximum number is: " << max_count << std::endl;
+	std::cout << "Minimum number is: " << min_count << std::endl;
 
 	return 0;
 }
