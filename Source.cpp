@@ -23,38 +23,19 @@ int main()
 
 	for (int i = 0; i < numberOfThrows; i++) // Count the value of each array element
 	{
-		int randNumber = 1 + rand() % 6;
+		int randNumber = 1 + rand() % SIZE;
 
 		std::cout << i + 1 << " throw is " << randNumber << std::endl;
+        countDice[randNumber - 1]++;
 
-		switch (randNumber)
-		{
-		case 1:
-			countDice[randNumber - 1]++;
-			break;
-		case 2:
-			countDice[randNumber - 1]++;
-			break;
-		case 3:
-			countDice[randNumber - 1]++;
-			break;
-		case 4:
-			countDice[randNumber - 1]++;
-			break;
-		case 5:
-			countDice[randNumber - 1]++;
-			break;
-		case 6:
-			countDice[randNumber - 1]++;
-			break;
-		}
+
 	}
 
 	std::cout << std::endl;
 
-	for (int i = 1; i < 7; i++) // cout the dropped sides
+	for (int i{}; i < SIZE; i++) // cout the dropped sides
 	{
-		std::cout << "Side " << i << " dropped " << countDice[i - 1] << " times " << std::endl;
+		std::cout << "Side " << i + 1 << " dropped " << countDice[i] << " times " << std::endl;
 	}
 
 	std::cout << std::endl;
